@@ -128,3 +128,6 @@
                    (->Ingredient "chease" 1 :lb)
                    (->Ingredient "peper" 1 :g)))
 
+(def units [:lb :oz :kg])
+(some #{:oz} units)
+(some #{:g} units)
