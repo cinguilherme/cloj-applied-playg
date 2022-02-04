@@ -27,3 +27,8 @@
                      :when (not= (kw ov) (kw nv))] kw)]
     (swap! sold-items update-in [item] (fnil inc 0))
     (println "need restock" item)))
+
+{:id     "23423423"
+ :class  :ground
+ :weight 10
+ :volume 300}
