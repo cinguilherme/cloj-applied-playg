@@ -1,0 +1,4 @@
+{:rule-set #immuconf/default :basic
+ :rule-db {:url #immuconf/override "jdbc:db://<host>:4567/dbname"
+           :user #immuconf/default "admin"
+           :password #immuconf/override "Specify password"}}

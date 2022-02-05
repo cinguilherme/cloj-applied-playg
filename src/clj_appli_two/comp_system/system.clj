@@ -3,8 +3,13 @@
             [clojure.core.async :as async :refer [chan]]
             [clj-appli-two.components.comp-feed :as feed]
             [clj-appli-two.components.approvals :as c.approvals]
-            [clj-appli-two.components.knowledge-engine :as ke]))
+            [clj-appli-two.components.knowledge-engine :as ke]
+            [immuconf.config :as conf]))
 
+(def config (conf/load "resources/config.edn"
+                       "user.edn"))
+
+(conf/get config :rule-set)
 
 (defn system [{:keys [twitter facebook knowledge approvals] :as config}]
   (let [twitter-chan (chan 100)
