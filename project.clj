@@ -7,5 +7,6 @@
                  [prismatic/schema "1.2.0"]
                  [medley "1.3.0"]
                  [org.clojure/core.async "1.5.648"]
-                 [com.stuartsierra/component "1.0.0"]]
+                 [com.stuartsierra/component "1.0.0"]
+                 [environ "1.2.0"]]
   :repl-options {:init-ns clj-appli-two.core})
