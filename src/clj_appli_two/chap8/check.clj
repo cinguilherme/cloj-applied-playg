@@ -2,7 +2,8 @@
   (:require [clojure.test.check :as tc]
             [clojure.test.check.generators :as gen]
             [clojure.test.check.properties :as prop]
-            [clj-appli-two.recipe :as rec :refer [map->Ingredient convert]]))
+            [clojure.test.check.clojure-test :refer [defspec]]
+            [clj-appli-two.recipe :as rec :refer [map->Ingredient convert ingredient+]]))
 
 (def pos-i (gen/fmap inc gen/nat))
 
@@ -49,3 +50,15 @@
                         (convert u2 u1 (convert u1 u2 q))))))
 
 (tc/quick-check 100 round-trip-conversion-prop)
+
+(defn add-and-convert [i1 i2 i3 output-unit]
+  (let [{:keys [quantity unit]} (ingredient+ i1 (ingredient+ i2 i3))]
+    (convert unit output-unit)))
+
+(def associative-ingredient+-prop
+  (prop/for-all [i1 gen-ingredient
+                 i2 gen-ingredient
+                 i3 gen-ingredient]
+                (= (add-and-convert i1 i2 i3 (:unit i1))
+                   (add-and-convert i3 i2 i1 (:unit i1))
+                   (add-and-convert i2 i1 i3 (:unit i1)))))
