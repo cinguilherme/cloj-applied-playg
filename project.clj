@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [prismatic/schema "1.2.0"]
                  [medley "1.3.0"]
+                 [org.clojure/test.check "1.1.1"]
                  [org.clojure/core.async "1.5.648"]
                  [com.stuartsierra/component "1.0.0"]
                  [levand/immuconf "0.1.0"]]

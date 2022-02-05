@@ -30,6 +30,7 @@
     <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.56" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.priority-map:1.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.2.194" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/test.check:1.1.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer.jvm:1.2.2" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer:1.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.logging:0.3.1" level="project" />
