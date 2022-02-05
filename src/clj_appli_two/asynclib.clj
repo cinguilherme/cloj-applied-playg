@@ -14,3 +14,8 @@
 
 (go (map #(>! c "hello there boys!!") (range 10)))
 (go (>! c "hello there boys!!"))
+
+(let [future-comp (promise)]
+  (println (realized? future-comp))
+  (deliver future-comp 10)
+  (println @future-comp))
