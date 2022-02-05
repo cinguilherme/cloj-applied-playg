@@ -21,6 +21,17 @@
   (let [xf (comp parse-words interesting score)]
     (async/pipeline 4 out xf in)))
 
+(defn score-stage [intermediate out]
+  (async/pipeline 1 out score intermediate))
+
+(defn interesting-stage [in intermediate]
+  (let [xf (comp parse-words interesting)]
+    (async/pipeline 4 intermediate xf in)))
+
+(defn assemble-stages [in out]
+  (let [intermediate (async/chan 100)]
+    (interesting-stage in intermediate)
+    (score-stage intermediate out)))
 
 (comment
   (def in (chan 10))
