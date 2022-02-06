@@ -1,0 +1,1 @@
+{my/card clj-appli-two.chap10.cards/card-reader}

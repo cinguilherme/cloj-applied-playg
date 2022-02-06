@@ -1,0 +1,8 @@
+[
+ {:name "jane"
+  :email "janelee@lez.com"
+  :roles [:admin :supervisor :analyst]}
+ {:name "fred"
+  :email "frederick@lez.com"
+  :roles [:analyst]
+  :card #my/card "2c"}]

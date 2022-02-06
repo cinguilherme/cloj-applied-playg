@@ -9,7 +9,10 @@
                  [org.clojure/test.check "1.1.1"]
                  [org.clojure/core.async "1.5.648"]
                  [com.stuartsierra/component "1.0.0"]
-                 [levand/immuconf "0.1.0"]]
+                 [levand/immuconf "0.1.0"]
+                 [org.clojure/data.json "2.4.0"]
+                 [cheshire "5.10.2"]
+                 [com.cognitect/transit-clj "1.0.329"]]
 
   :test-selectors {:string :string}
 
